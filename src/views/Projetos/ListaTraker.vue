@@ -1,7 +1,6 @@
 <template>
-  <section class="projetos">
+  <section>
     <section>
-      <h1 class="title">Projetos</h1>
       <router-link to="/projetosTraker/novo" class="button">
         <span class="icon is-small">
           <i class="fas fa-plus"></i>
@@ -37,7 +36,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
-import useStore from '@/store/index'
+import useStore from '@/store'
 
 export default defineComponent({
   name: 'listaTraker',
@@ -50,8 +49,3 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.projetos {
-  padding: 1.25rem;
-}
-</style>

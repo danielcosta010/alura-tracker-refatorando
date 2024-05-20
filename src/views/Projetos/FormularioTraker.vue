@@ -1,25 +1,22 @@
 <template>
-  <section class="projetos">
-    
-      <h1 class="title">Projetos</h1>
-
-      <form action="" @submit.prevent="salvar">
-        <div class="field">
-          <label for="nomeDoProjeto" class="label">Nome do Projeto</label>
-          <input type="text" id="nomeDoProjeto" v-model="nomeDoProjeto" class="input"
-            placeholder="Digite o nome do projeto">
-        </div>
-        <div class="field">
-          <button class="button" type="submit">Salvar</button>
-        </div>
-      </form>
+  <section>
+    <form action="" @submit.prevent="salvar">
+      <div class="field">
+        <label for="nomeDoProjeto" class="label">Nome do Projeto</label>
+        <input type="text" id="nomeDoProjeto" v-model="nomeDoProjeto" class="input"
+          placeholder="Digite o nome do projeto">
+      </div>
+      <div class="field">
+        <button class="button" type="submit">Salvar</button>
+      </div>
+    </form>
   </section>
 
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import  useStore  from '@/store'
+import useStore from '@/store'
 
 export default defineComponent({
   name: 'FormularioTraker',
@@ -28,8 +25,8 @@ export default defineComponent({
       type: String,
     }
   },
-  mounted () {
-    if(this.id) {
+  mounted() {
+    if (this.id) {
       const projeto = this.store.state.projetos.find(proj => proj.id == this.id)
       this.nomeDoProjeto = projeto?.nome || ''
     }
@@ -41,7 +38,7 @@ export default defineComponent({
   },
   methods: {
     salvar() {
-      if(this.id) {
+      if (this.id) {
         this.store.commit('ALTERA_PROJETO', {
           id: this.id,
           nome: this.nomeDoProjeto
@@ -61,9 +58,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped>
-.projetos {
-  padding: 1.25rem;
-}
-</style>

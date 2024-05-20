@@ -1,6 +1,7 @@
 <template>
   <div class="projetos">
     <h1 class="title">Projetos</h1>
+    <RouterView></RouterView>
   </div>
 </template>
 
@@ -11,3 +12,9 @@ import { defineComponent } from 'vue';
     name: 'projetosTraker'
   })
 </script>
+
+<style scoped>
+.projetos {
+  padding: 1.25rem;
+}
+</style>
