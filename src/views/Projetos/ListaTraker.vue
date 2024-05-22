@@ -42,7 +42,7 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
 import { useStore } from '@/store'
-import { EXCLUIR_PROJETO } from '@/store/tipos-de-mutacoea';
+import { EXCLUIR_PROJETO } from '@/store/tipos-de-mutacoes';
 
 export default defineComponent({
   name: 'listaTraker',
