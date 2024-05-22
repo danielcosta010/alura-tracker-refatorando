@@ -17,7 +17,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useStore } from '@/store'
-import { ALTERA_PROJETO, ADICIONA_PROJETO } from '@/store/tipos-de-mutacoea';
+import { ALTERA_PROJETO, ADICIONA_PROJETO } from '@/store/tipos-de-mutacoes';
 
 export default defineComponent({
   name: 'FormularioTraker',
