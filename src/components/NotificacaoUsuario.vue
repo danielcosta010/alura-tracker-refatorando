@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<script lang="">
+<script lang="ts">
   import { computed, defineComponent} from 'vue';
   import { useStore } from '@/store';
   import { TipoNotificacao } from '@/interfaces/INotificacao'
