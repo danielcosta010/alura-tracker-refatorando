@@ -17,7 +17,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useStore } from '@/store'
-import { ALTERA_PROJETO, ADICIONA_PROJETO } from '@/store/tipos-de-mutacoes';
+import { ALTERA_PROJETO, ADICIONA_PROJETO, NOTIFICAR } from '@/store/tipos-de-mutacoes';
+import { TipoNotificacao } from '@/interfaces/INotificacao';
 
 export default defineComponent({
   name: 'FormularioTraker',
@@ -48,7 +49,15 @@ export default defineComponent({
         this.store.commit(ADICIONA_PROJETO, this.nomeDoProjeto)
       }
       this.nomeDoProjeto = ''
+      this.notificar(TipoNotificacao.SUCESSO, 'Tudo certo!', 'Projeto adicionado com sucesso')
       this.$router.push('/projetosTraker')
+    },
+    notificar(tipo: TipoNotificacao, titulo: string, texto: string) {
+      this.store.commit(NOTIFICAR, {
+        titulo,
+        texto,
+        tipo
+      })
     }
   },
   setup() {
