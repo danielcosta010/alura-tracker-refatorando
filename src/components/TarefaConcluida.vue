@@ -1,15 +1,19 @@
 <template>
   <BoxVazio>
-      <div class="columns">
-        <div class="column is-7">
-          {{ tarefa.descricao || 'Tarefa sem descrição' }}
-        </div>
-        <div class="column">
-          <CronometroTempo :contador="tarefa.duracaoEmSegundos"/>
-        </div>
+    <div class="columns">
+      <div class="column is-4">
+        {{ tarefa.descricao || 'Tarefa sem descrição' }}
       </div>
+      <div class="column is-3">
+        {{ tarefa.projeto?.nome || 'N/D' }}
+      </div>
+      <div class="column">
+          <i class="fa-regular fa-clock"></i>
+          <CronometroTempo :contador="tarefa.duracaoEmSegundos" />
+      </div>
+    </div>
   </BoxVazio>
-  
+
 </template>
 
 <script lang="ts">
@@ -32,4 +36,3 @@ export default defineComponent({
   }
 })
 </script>
-
