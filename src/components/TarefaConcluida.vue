@@ -7,8 +7,7 @@
       <div class="column is-3">
         {{ tarefa.projeto?.nome || 'N/D' }}
       </div>
-      <div class="cronometro">
-          <i class="fa-regular fa-clock"></i>
+      <div>
           <CronometroTempo :contador="tarefa.duracaoEmSegundos" />
       </div>
     </div>
@@ -36,13 +35,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped>
-.cronometro {
-  display: flex;
-  align-items: center;
-}
-.fa-regular {
-  margin-right: 5px;
-}
-</style>
