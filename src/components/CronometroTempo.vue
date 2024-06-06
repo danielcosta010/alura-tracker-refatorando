@@ -1,7 +1,7 @@
 <template>
   <section>
     <strong class="cronometro">
-      {{ tempoDecorrido }}
+      <i class="fa-regular fa-clock"></i> {{ tempoDecorrido }}
     </strong>
   </section>
 </template>
